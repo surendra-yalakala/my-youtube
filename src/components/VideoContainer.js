@@ -16,7 +16,7 @@ function VideoContainer() {
     setVideos(json.items);
   };
   return (
-    <div className="flex flex-wrap">
+    <div className="grid grid-cols-3 list-none mx-4">
       {videos.map((video) => {
         return (
           <Link id={video.id} to={"/watch?v=" + video.id}>
