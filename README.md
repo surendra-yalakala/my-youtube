@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# 📺 My YouTube
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A YouTube clone web application built with **React.js** that integrates the **YouTube Data API v3** to fetch and display real videos, channels, and search results — replicating core YouTube features with a clean, responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔍 Search for any video using the real YouTube Data API
+- 🎬 Watch videos with an embedded YouTube player
+- 📊 Display video metadata — title, channel name, views, and published date
+- 📂 Browse videos by category / topic
+- 📱 Fully responsive layout for mobile and desktop
+- ⚡ Debounced search input for optimized API usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+| Layer       | Technology                                      |
+|-------------|--------------------------------------------------|
+| Frontend    | React.js, JavaScript (ES6+)                      |
+| API         | YouTube Data API v3 (Google)                     |
+| HTTP Client | Axios                                            |
+| Styling     | CSS3, Flexbox, Grid                              |
+| State       | React Hooks (`useState`, `useEffect`)            |
+| Routing     | React Router DOM                                 |
+| Build Tool  | Create React App                                 |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+my-youtube/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Header/
+│   │   ├── SearchBar/
+│   │   ├── VideoList/
+│   │   ├── VideoCard/
+│   │   └── VideoPlayer/
+│   ├── api/
+│   │   └── youtube.js       # Axios instance with API key config
+│   ├── App.js
+│   └── index.js
+└── package.json
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js >= 14.x
+- npm >= 6.x
+- A [YouTube Data API v3 key](https://console.cloud.google.com/) (free via Google Cloud Console)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone the repository
+git clone https://github.com/surendra-yalakala/my-youtube.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Navigate into the project directory
+cd my-youtube
 
-## Learn More
+# Install dependencies
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Environment Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a `.env` file in the root directory:
 
-### Code Splitting
+```env
+REACT_APP_YOUTUBE_API_KEY=your_youtube_api_key_here
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+> ⚠️ Never commit your API key. The `.env` file is already in `.gitignore`.
 
-### Analyzing the Bundle Size
+```bash
+# Start the development server
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The app will run at `http://localhost:3000`
 
-### Making a Progressive Web App
+### Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run build
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🧠 Key Learnings & Highlights
 
-### Deployment
+- Integrated **YouTube Data API v3** using Axios with a centralised API config — keeping API keys secure via environment variables
+- Implemented **debounced search** to reduce unnecessary API calls on every keystroke
+- Built **reusable VideoCard and VideoList components** that adapt to different data shapes (search results vs. category feeds)
+- Applied **React Router** for seamless navigation between search results and video playback pages
+- Practiced **async/await with useEffect** for clean side-effect management and loading states
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🔮 Planned Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Add related videos sidebar on the player page
+- [ ] Implement channel detail page
+- [ ] Add dark mode toggle
+- [ ] Cache API responses to reduce quota usage
+- [ ] Write unit tests with Jest and React Testing Library
+- [ ] Deploy on Vercel
+
+---
+
+## 👨‍💻 Author
+
+**Surendra Yalakala**
+Senior React & React Native Developer | 8+ years experience
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-surendrayalakala-blue?style=flat&logo=linkedin)](https://linkedin.com/in/surendrayalakala)
+[![GitHub](https://img.shields.io/badge/GitHub-surendra--yalakala-black?style=flat&logo=github)](https://github.com/surendra-yalakala)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
